@@ -59,13 +59,13 @@ else{
 
 <div id="chatbox"></div>
 <?php
-if(file_exists("log.html") && filesize("log.html") > 0){
+/*if(file_exists("log.html") && filesize("log.html") > 0){
     $handle = fopen("log.html", "r");
     $contents = fread($handle, filesize("log.html"));
     fclose($handle);
 
     echo $contents;
-}
+}*/
 ?>
 
 <form name="message" action="">

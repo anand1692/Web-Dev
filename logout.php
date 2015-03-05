@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "Suvarn92";
@@ -16,8 +17,7 @@ $uname = $_SESSION['login_user'];
 $sql = "UPDATE MyUsers SET active=0 WHERE name='$uname'";
 
 if ($conn->query($sql) === TRUE) {
-	header("location: login-page.php"); // Redirecting To Home Page
-    $_SESSION['logout'] = 1;
+	header('location: login-page.php');
 } else {
     echo "Error updating record: " . $conn->error;
 } 

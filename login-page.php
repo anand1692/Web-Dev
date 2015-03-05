@@ -1,9 +1,6 @@
 <?php
 session_start(); // Starting Session
 include('login-db.php'); // Includes Login Script
-if(isset($_SESSION['logout'])) {
-	echo "You have succesfully logged out";
-}
 ?>
 
 <!DOCTYPE html>

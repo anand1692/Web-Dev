@@ -45,6 +45,14 @@ function loadFriends() {
 function alertfunc() {
 	alert("<?php echo $_SESSION['login_user']?>");
 }
+
+function startChat(friendId) {
+	document.getElementById(friendId).addEventListener("click", openChatWindow(), false);
+	function openChatWindow() {
+		window.open("chat-page.php?sender="+"<?php echo $_SESSION['login_user'];?>"+ "&receiver="+friendId, 
+					"ChatWindow", "width=600px, height=600px");
+	}
+}
 </script>
 
 </body>
