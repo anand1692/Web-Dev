@@ -21,7 +21,7 @@ if(is_dir($receiver_dir) === false) {
 if(isset($_GET['logout'])) {
 	$sender = $_GET['sender'];
 	$receiver = $_GET['receiver'];
-	$text = "has left the chat";
+	$text = " has left the chat";
 	$sender_file = fopen($sender . "/" . $receiver . ".html", "a+");
 	$receiver_file = fopen($receiver . "/" . $sender . ".html", "a+");
 	
@@ -76,8 +76,7 @@ $(document).ready(function() {
 			var clientmsg = "has left the chat";
 			var senduser = "<?php echo $_GET['sender'];?>";
 			var receiveuser = "<?php echo $_GET['receiver'];?>";
-			$.post("chat-log.php", {text: clientmsg, sender: senduser, receiver: receiveuser});
-			window.location = 'chat-page.php?logout=true&sender='+senduser'&receiver='+receiveuser;
+			window.location = 'chat-page.php?logout=true&sender='+senduser+'&receiver='+receiveuser;
 		}
 
 	});
