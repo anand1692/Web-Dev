@@ -37,23 +37,17 @@ function test_input($data) {
 }
 ?>
 
-<h2>Welcome to the Registration to SCU Chat</h2>
+<h1>Welcome to the Registration to SCU Chat</h1>
+<div id="register">
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-   Username: <input type="text" name="uname" value="<?php echo $username;?>">
+   Username:<span class="error"> * </span> <input type="text" name="uname" value="<?php echo $username;?>" placeholder="username">
    <span class="error"><?php echo $usernameErr;?></span>
    <br><br>
-   Password: <input id="password" name="password" placeholder="**********" type="password">
+   Password:<span class="error"> * </span> <input id="password" name="password" placeholder="**********" type="password">
    <input type="submit" name="submit" value="Register"> 
 </form>
-
-<?php
-echo "<h2>Your Input:</h2>";
-echo $username;
-echo "<br>";
-echo $password;
-echo "<br>";
-?>
+</div>
 
 </body>
 </html>

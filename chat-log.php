@@ -5,6 +5,10 @@
 	$sender = $_POST['sender'];
 	$receiver = $_POST['receiver'];
 	
+	echo $text;
+	echo $sender;
+	echo $receiver;
+	
 	$sender_file = fopen($sender . "/" . $receiver . ".html", "a+");
 	$receiver_file = fopen($receiver . "/" . $sender . ".html", "a+");
 	

@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
      	if($row['active'] == 1 && $row['name'] != $q) {
-        	echo "<br>". "<a id=". $row["name"]. " href='#' onclick='startChat(this.id)'>". $row["name"]. " is online";
+        	echo "<br>". "<a class=friendNames id=". $row["name"]. " href='#' onclick='startChat(this.id)'>". $row["name"];
      	} 
      }
 } else {

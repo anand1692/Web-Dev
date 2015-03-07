@@ -2,83 +2,194 @@
 @import http://fonts.googleapis.com/css?family=Raleway;
 
 #main {
-width:500px;
-margin:50px auto;
-font-family:raleway
+	width:500px;
+	margin:50px auto;
+	font-family:raleway;
 }
 span {
-color:red
+	color:red
 }
 h2 {
-background-color:#FEFFED;
-text-align:center;
-border-radius:10px 10px 0 0;
-margin:-10px -40px;
-padding:15px
+	font:helvetica 20px;
+	font-family:raleway;
+	text-align:center;
+	border-radius:10px 10px 0 0;
+	margin:-10px -40px;
+	padding:15px;
+	color:#CC0066;
+	text-decoration:underline;
 }
 hr {
-border:0;
-border-bottom:1px solid #ccc;
-margin:10px -40px;
-margin-bottom:30px
+	border:0;
+	border-bottom:1px solid #ccc;
+	margin:10px -40px;
+	margin-bottom:30px;
 }
 #login {
-width:300px;
-float:left;
-border-radius:10px;
-font-family:raleway;
-border:2px solid #ccc;
-padding:10px 40px 25px;
-margin-top:70px
+	position:absolute;
+	width:300px;
+	border-radius:10px;
+	font-family:raleway;
+	border:2px solid #ccc;
+	padding:20px 40px 15px;
+	margin:30px 0 0 50px;
+	background-color:#FEFFED;
+}
+#register {
+	position:absolute;
+	width:300px;
+	border-radius:10px;
+	font-family:raleway;
+	border:2px solid #ccc;
+	padding:10px 40px 15px;
+	margin:30px 0 0 430px;
+	background-color:#FEFFED;
 }
 input[type=text],input[type=password] {
-width:99.5%;
-padding:10px;
-margin-top:8px;
-border:1px solid #ccc;
-padding-left:5px;
-font-size:16px;
-font-family:raleway
+	width:99.5%;
+	padding:10px;
+	margin-top:8px;
+	border:1px solid #ccc;
+	padding-left:5px;
+	font-size:16px;
+	font-family:raleway
 }
 input[type=submit] {
-width:100%;
-background-color:#FFBC00;
-color:#fff;
-border:2px solid #FFCB00;
-padding:20px;
-font-size:20px;
-cursor:pointer;
-border-radius:5px;
-margin-bottom:15px
+	width: 100%;
+	background-color:#FFBC00;
+	color:#fff;
+	border:2px solid #FFCB00;
+	padding:10px;
+	font-size:20px;
+	cursor:pointer;
+	border-radius:5px;
+	margin-top:10px;
+	margin-bottom:15px;
+}
+#usermsg {
+	width:75%;
+	padding:10px;
+	border:1px solid #ccc;
+	padding-left:5px;
+	font-size:16px;
+	font-family:raleway
+}
+#submitmsg {
+	width:22%;
+	float:right;
+	background-color:#FFBC00;
+	color:#fff;
+	border:2px solid #FFCB00;
+	padding:10px;
+	font-size:15px;
+	cursor:pointer;
+	border-radius:5px;
+	margin-bottom:15px;
 }
 #profile {
-padding:50px;
-border:1px dashed grey;
-font-size:20px;
-background-color:#DCE6F7
+	padding:30px;
+	border:1px solid black;
+	font-size:20px;
+	background-color:#FEFFED;
 }
 #logout {
-float:right;
-padding:5px;
-border:dashed 1px gray
+	font-size:helvetica;
+	float:right;
+	padding:5px;
+	cursor:pointer;
+	font-size:20px;
+	background-color:#FFBC00;
+	color:#fff;
+	border:2px solid #FFCB00;
+	border-radius:5px;
+	margin-top:5px;
+	margin-bottom:20px;
+	margin-right:20px;
 }
+#exitChat {
+	font-size:helvetica;
+	float:right;
+	padding:5px;
+	cursor:pointer;
+	font-size:15px;
+	background-color:#FFBC00;
+	color:#fff;
+	border:2px solid #FFCB00;
+	border-radius:5px;
+	margin-top:5px;
+	margin-bottom:20px;
+	margin-right:20px;
+}
+
 a {
-text-decoration:underline;
 color:#6495ed
 }
-i {
-color:#6495ed
-}
+
 .error {color: #FF0000;}
+
+h1 {
+	text-align:center;
+	font-family:raleway;
+	font:arial;
+}
+body {
+	background-color: #CCCCFF;
+}
+label {
+	font-family:raleway;
+	font:arial;
+}
+#welcome {
+	text-align:center;
+	border-radius:10px 10px 0 0;
+	margin:-10px -40px;
+	padding:15px;
+	font:30px arial;
+	font-family:raleway;
+}
+#welcomeUser {
+	color:#FFBC00;
+	font:30px;
+	font-family:raleway;
+}
 #chatbox {
 	text-align:left;
-	margin:0 auto;
+	margin-top:5px;
 	margin-bottom:25px;
 	padding:10px;
 	background:#fff;
-	height:80%;
-	width:100%;
+	height:400px;
+	width:500px;
 	border:1px solid #8a8982;
-	background-color:cyan;
+	background-color: #FEFFED;
 	overflow:auto;
+}
+#friendWrapper {
+	position:absolute;
+	width:300px;
+	border-radius:10px;
+	font-family:raleway;
+	border:2px solid #ccc;
+	padding:10px 40px 15px;
+	margin:30px 0 0 450px;
+	background-color:#FEFFED;
+	overflow:auto;
+}
+.friendNames {
+	color:#95BA25;
+	font:30px;
+	font-family:raleway;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+#headline {
+	font:helvetica 40px;
+	font-family:raleway;
+	text-align:center;
+	border-radius:10px 10px 0 0;
+	margin:-20px -10px;
+	padding:15px;
+	font-weight:bold;
+	color:#CC0066;
 }

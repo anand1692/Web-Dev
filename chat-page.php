@@ -1,9 +1,9 @@
 <?php 
 session_start();
-echo "Sender = ".$_GET['sender'];
+/*echo "Sender = ".$_GET['sender'];
 echo "<br>";
 echo "Receiver = ".$_GET['receiver'];
-echo "<br>";
+echo "<br>";*/
 
 $sender_dir = $_GET['sender'];
 $receiver_dir = $_GET['receiver'];
@@ -51,7 +51,7 @@ if(isset($_GET['logout'])) {
 <body>
 <div id="wrapper">
 <div id="headline">
-<p>Have a great time chatting with <?php echo $_GET['receiver']; ?>&nbsp;&nbsp;
+<p>Have a great time chatting with <?php echo $_GET['receiver']; ?> !
 	<button id="exitChat">End Chat</button>
 	</p>
 </div>

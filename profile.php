@@ -11,14 +11,23 @@ session_start();
 
 <body>
 <div id="profile">
-<b id="welcome">Welcome : <i><?php echo $_SESSION['login_user']; ?></i></b>
-<b id="logout"><a href="logout.php">Log Out</a></b>
+<p id="welcome"><b>Hi, <i><span id="welcomeUser"><?php echo $_SESSION['login_user']; ?></span></i></b></p>
+<button id="logout">Log Out</button>
 </div>
 
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
-<p>Online Friends</p>
+<div id="friendWrapper">
+<h2>Online Friends</h2>
 <div id="friendList"></div>
+</div>
+
+<script>
+	var btn = document.getElementById('logout');
+	btn.addEventListener("click", function() {
+		document.location.href = 'logout.php';
+	});
+</script>
 
 <script>
 $(document).ready(function() {

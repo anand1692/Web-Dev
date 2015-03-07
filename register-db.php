@@ -20,9 +20,9 @@ if(isset($_POST['submit'])) {
 	if ($conn->query($sql) === TRUE) {
 		header("location: profile.php"); // Redirecting To Other Page
 		$_SESSION['login_user']=$uname; // Initializing Session
-	} else {
+	} /*else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
-	}
+	}*/
 		
 	$conn->close();
 }
