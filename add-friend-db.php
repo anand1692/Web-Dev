@@ -14,18 +14,18 @@ if ($conn->connect_error) {
 
 $q = $_GET['q'];
 
-$sql = "SELECT name, active FROM ".$q."_local WHERE active=1";
+$sql = "SELECT name, active FROM MyUsers WHERE active=1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
      	if($row['active'] == 1 && $row['name'] != $q) {
-        	echo "<br>". "<a class=friendNames id=". $row["name"]. " href='#' onclick='startChat(this.id)'>". $row["name"];
+        	echo "<br>". "<a class=friendNames id=". $row["name"]. " href='#' onclick='addFriend(this.id)'>". $row["name"];
      	} 
      }
 } else {
-     echo "<span>"."No friends are online"."</span>";
+     echo "<span>"."No users are online"."</span>";
 }
 
 $conn->close();

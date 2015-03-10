@@ -106,6 +106,30 @@ input[type=submit] {
 	margin-bottom:20px;
 	margin-right:20px;
 }
+#addfriend {
+	font-size:helvetica;
+	float:left;
+	padding:5px;
+	cursor:pointer;
+	font-size:20px;
+	background-color:#FFBC00;
+	color:#fff;
+	border:2px solid #FFCB00;
+	border-radius:5px;
+	margin-top:5px;
+	margin-bottom:20px;
+	margin-right:20px;
+}
+#addFriendHeader {
+	font:helvetica 40px;
+	font-family:raleway;
+	text-align:center;
+	border-radius:10px 10px 0 0;
+	margin:-20px -10px;
+	padding:15px;
+	font-weight:bold;
+	color:#CC0066;
+}
 #exitChat {
 	font-size:helvetica;
 	float:right;
@@ -133,7 +157,10 @@ h1 {
 	font:arial;
 }
 body {
-	background-color: #CCCCFF;
+	background-image:url(main-back.gif);
+    background-size:100%;
+    background-color:black;
+    background-repeat:no-repeat;
 }
 label {
 	font-family:raleway;
@@ -192,4 +219,17 @@ label {
 	padding:15px;
 	font-weight:bold;
 	color:#CC0066;
+}
+#friendListBox {
+	text-align:left;
+	margin-top:20px;
+	margin-bottom:25px;
+	margin-left:20px;
+	padding:15px;
+	background:#fff;
+	height:400px;
+	width:500px;
+	border:1px solid #8a8982;
+	background-color: #FEFFED;
+	overflow:auto;
 }

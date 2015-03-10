@@ -13,6 +13,7 @@ session_start();
 <div id="profile">
 <p id="welcome"><b>Hi, <i><span id="welcomeUser"><?php echo $_SESSION['login_user']; ?></span></i></b></p>
 <button id="logout">Log Out</button>
+<button id="addfriend">Add a friend</button>
 </div>
 
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -23,10 +24,17 @@ session_start();
 </div>
 
 <script>
-	var btn = document.getElementById('logout');
-	btn.addEventListener("click", function() {
+	var logout_btn = document.getElementById('logout');
+	logout_btn.addEventListener("click", function() {
 		document.location.href = 'logout.php';
 	});
+
+	var addFriend_btn = document.getElementById('addfriend');
+	addFriend_btn.addEventListener("click", function() {
+		window.open("add-friend.php?user="+"<?php echo $_SESSION['login_user'];?>","Add a Friend",
+					"width=600px, height=600px");
+	});
+	
 </script>
 
 <script>
@@ -51,9 +59,6 @@ function loadFriends() {
     xmlhttp.send();
 }
 
-function alertfunc() {
-	alert("<?php echo $_SESSION['login_user']?>");
-}
 
 function startChat(friendId) {
 	document.getElementById(friendId).addEventListener("click", openChatWindow(), false);

@@ -36,7 +36,16 @@ if (isset($_POST['submit'])) {
 				$_SESSION['login_user']=$username; // Initializing Session
 				
 				$sql = mysql_query("UPDATE MyUsers SET active=1 WHERE name='$username'", $connection);
+				
 				if ($sql === TRUE) {
+					$sql2 = mysql_query("SELECT name FROM ".$username."_local", $connection);
+					$friendRow = mysql_num_rows($sql2);
+					if($friendRow > 0) {
+						while($friendInfo = mysql_fetch_assoc($sql2)) {
+							$sql3 = mysql_query("UPDATE ".$friendInfo['name']."_local SET active=1 WHERE name='$username'",
+									$connection);
+						}
+					}
 					header("location: profile.php"); // Redirecting To Other Page
 				} else {
 					echo "Error updating record ";
