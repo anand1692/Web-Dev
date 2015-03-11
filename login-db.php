@@ -1,4 +1,19 @@
 <?php
+/*
+ * This php is responsible to check the login user's credentials. It deos the following important jobs :
+ * 1) It verifies the login user's credentials - username and password. If true, is sets the active bit = 1
+ * 2) It prevents muliple logins from the same user within one session or across tabs and browsers.
+ * 3) Once the user succesfully logs in, it also sets its active bit = 1 in all its friend's local table
+ * 	  so that, when they come online, they see this friend as online.
+ * 
+ *  This php is called from the login.php when the user submits its login credentials. If the log in credentials 
+ *  are faulty, the gives the user a prompt of invalid entry. Also, if the user tries multiple logins, this php
+ *  logs out the user from the existing session and returns him to the login page.
+ *  
+ *  Once logged in, the user is taken to its profile page which will show the list of all of his online friends.
+ *  
+ *  Created by Anand Goyal, copyright © March 2015, Anand Goyal
+ */
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 
@@ -26,11 +41,13 @@ if (isset($_POST['submit'])) {
 		$query = mysql_query("select * from MyUsers where password='$password' AND name='$username'", $connection);
 		$userInfo = mysql_fetch_assoc($query);
 		
+		// If the user is already logged in, it is directly logged out from the session. Calls the logout.php
 		if ($userInfo['active'] == 1) {
 			$error = "User is already logged in. Redirecting to Login page after Logout";
 			$_SESSION['login_user']=$username; // Preventing multiple Session
 			header("location: logout.php");
 		}else {
+			// If the log in credentials are verified, the active bit of the login user is set across the database.
 			$rows = mysql_num_rows($query);
 			if ($rows == 1) {
 				$_SESSION['login_user']=$username; // Initializing Session

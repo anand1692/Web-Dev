@@ -1,4 +1,15 @@
 <?php
+/*
+ * This is the login page. It is the first page of the chat messenger, where the user enters his username
+ * and password. These credentials are then verified by login-page-db.php and if correct, directs the user
+ * to his profile page, else shows him the error message.
+ * 
+ * This page also offers a new user to register itself, without which he cannot login. Only an already registered
+ * user can log into the chat messenger. If the user clicks the "register here" link, he is directed to the
+ * registration page. 
+ * 
+ * Created by Anand Goyal, copyright © March 2015, Anand Goyal
+ */
 session_start(); // Starting Session
 include('login-db.php'); // Includes Login Script
 ?>

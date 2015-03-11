@@ -1,7 +1,14 @@
 <?php
+/*
+ * This php is called from profile.php on clicking the "Add a friend" button. This php in turn calls 
+ * add-friend-db.php and displays a list on online registered users that the login user wants to add
+ * as a friend. 
+ * When the login user clicks the name of the registered user to add a friend, this php
+ * will call the insert-friend.php and adds the particular user as login user's friend.
+ * 
+ * Created by Anand Goyal, copyright © March 2015, Anand Goyal
+ */
 session_start();
-$user = $_GET['user'];
-//echo $user;
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +19,7 @@ $user = $_GET['user'];
 </head>
 
 <body>
-	<p id="addFriendHeader">Hi <?php echo $_GET['user'];?>, click on the name of the person you wish to be friends</p>
+	<p id="addFriendHeader">Hi <?php echo $_GET['user'];?>, click the user you wish add as a friend</p>
 	<div id="friendListBox"></div>
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -22,6 +29,9 @@ $user = $_GET['user'];
 			setInterval(loadFriends, 1000);
 		});
 
+		/* This function creates an ajax object to display the list of online registered users which can 
+		 * be added as friend. It sends a GET request to add-friend.php with login user as argument.
+		 */
 		function loadFriends() {
 			if (window.XMLHttpRequest) {
 		        // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -39,6 +49,10 @@ $user = $_GET['user'];
 		    xmlhttp.send();
 		}
 
+		/* This function is activated when the user clicks on any of the name of the online registered
+		 * users. This function calls the insert-friend.php by sending a GET request with arguments as the 
+		 * login user and the friend, which the login user wants to add. 
+		 */
 		function addFriend(friendId){
 			document.getElementById(friendId).addEventListener("click", insertFriend(), false);
 			function insertFriend() {

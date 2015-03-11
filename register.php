@@ -1,4 +1,14 @@
 <?php 
+/*
+ * This php allows a new user to register. It shows a form where the user has to enter the details - username
+ * and password. Once he presses submit, this php calls the register-db.php and the details are inserted into
+ * the database. 
+ * 
+ * Checks are implemented that the user does not leave either of the necessary information empty. An error
+ * message is shown in case the user forgets to enter any required information.
+ * 
+ * Created by Anand Goyal, copyright © March 2015, Anand Goyal
+ */
 session_start(); // Starting Session
 include('register-db.php');
 ?>
@@ -15,6 +25,7 @@ include('register-db.php');
 $usernameErr = $passwordErr = "";
 $username = $password = "";
 
+// Condition to check if the new user has filled all the necessary information
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
    if (empty($_POST["uname"])) {
      $usernameErr = "Username is required";
@@ -45,7 +56,10 @@ function test_input($data) {
    <span class="error"><?php echo $usernameErr;?></span>
    <br><br>
    Password:<span class="error"> * </span> <input id="password" name="password" placeholder="**********" type="password">
+   <span class="error"><?php echo $passwordErr;?></span>
+   <br><br>
    <input type="submit" name="submit" value="Register"> 
+   <p class="error"><?php echo $error; ?></p>
 </form>
 </div>
 
