@@ -105,7 +105,7 @@ $(document).ready(function() {
 		var senduser = "<?php echo $_GET['sender'];?>";
 		var receiveuser = "<?php echo $_GET['receiver'];?>";
 		$.post("chat-log.php", {text: clientmsg, sender: senduser, receiver: receiveuser});
-		$('#usermsg').attr("value", '');
+		document.getElementById('usermsg').value = '';
 		return false;
 	});
 
